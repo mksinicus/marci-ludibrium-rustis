@@ -1,0 +1,30 @@
+[package]
+name = "domret"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+colour = "0.6"
+
+[dependencies.chrono]
+version = "0.4"
+features = [
+    "clock",
+    "unstable-locales"
+]
+
+[dependencies.rand]
+version = "0.8"
+features = [
+    "std_rng"
+]
+
+[profile.size]
+inherits = "release"
+opt-level = "z"
+strip = "none"
+
+[profile.release]
+strip = true
