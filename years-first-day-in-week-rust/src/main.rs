@@ -14,8 +14,8 @@ fn main() {
         firsts.insert(year, first_weekday(year));
     }
     let yaml = serde_yaml::to_string(&firsts).unwrap();
-    let mut file = File::create("first_weekdays.yaml").expect("Err: File creation failure");
-    writeln!(&mut file, "{}", yaml).expect("Fuck you error");
+    let mut file = File::create("first_weekdays.yaml").expect("Err: Failed to create file");
+    writeln!(&mut file, "{}", yaml).expect("Err: Failed to write to file");
     ()
 }
 
